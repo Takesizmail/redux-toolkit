@@ -1,20 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
-import App from './App';
-
+import App from './components/App';
+import { createGlobalStyle } from 'styled-components';
 import { Provider } from 'react-redux';
 import { setupStore } from './store/store';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const store = setupStore()
 
+export const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    background-color: #fefefe
+  }
+`
 
 ReactDOM.render(
 	<Provider store={store}>
 		<Router basename='/'>
 			<ErrorBoundary>
+				<GlobalStyles/>
 				<App/>
 			</ErrorBoundary>
 		</Router>
