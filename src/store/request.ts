@@ -1,20 +1,14 @@
 
 type Method = "GET" | "DELETE" | "POST" | "PUT" | "PATCH";
 
-const API = 'http://173.212.193.40:5486/';
+const API = 'http://173.212.193.40:5486';
 
-const getBaseOptions = (method: string, customOption: any) => {
+const getBaseOptions = (method: string, customOptions = {}) => {
 	let options: any = {
-		headers: {
-			accept: "application/json",
-			"content-Type": "application/json",
-		},
-		...customOption
+	method
 	};
 
-	options.method = method;
-
-	return options;
+	return Object.assign(options, customOptions);
 }
 
 const  getPathWithQueryString = (path: string, params: any = {}): string => {

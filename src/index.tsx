@@ -6,14 +6,17 @@ import { createGlobalStyle } from 'styled-components';
 import { Provider } from 'react-redux';
 import { setupStore } from './store/store';
 import ErrorBoundary from './components/ErrorBoundary';
+import { Colors } from './common/constants/colors';
 
 const store = setupStore()
 
 export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
-    background-color: #fefefe
   }
+	body {
+    background-color: ${Colors.background_main}
+	}
 `
 
 ReactDOM.render(

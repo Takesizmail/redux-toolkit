@@ -15,7 +15,7 @@ const App = () => {
 				<Route path={ROUTE_PATH.markets} element={<MarketsList />}/>
 				<Route path={ROUTE_PATH.markets_create} element={<MarketCreate />}/>
 
-				<Route path='*' element={<Navigate to={'/markets'}/>}/>
+				{/*<Route path='*' element={<Navigate to={'/markets'}/>}/>*/}
 			</Routes>
 		</AppContainer>
 	);

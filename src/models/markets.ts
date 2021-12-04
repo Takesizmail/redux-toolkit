@@ -7,7 +7,7 @@ interface Industry {
 	[key: string]: typeof key
 }
 
-export interface Markets {
+export interface IMarket {
 	symbol: string;
 	name: string;
 	country: string;
@@ -25,8 +25,12 @@ export interface Markets {
 	createdAt: string;
 	updatedAt: string;
 	id: number;
+}
 
-
-
-
+export interface IMarketsData {
+	data: IMarket[];
+	count: number;
+	total: number;
+	page: number;
+	pageCount: number;
 }
