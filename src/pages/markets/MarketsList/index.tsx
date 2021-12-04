@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { ReactComponent as Loader } from '../../../common/images/loader.svg'
 import { fetchMarkets } from '../../../store/modules/markets/action';
@@ -8,10 +8,9 @@ import MarketItem from './components/MarketItem';
 import Paginator, { IPaginationHandlerEvent } from './components/Paginator';
 
 const MarketsList = () => {
-	const [itemOffset, setItemOffset] = useState( 0 ) ;
 
 	const dispatch = useAppDispatch();
-	const {markets, pending, error} = useAppSelector(state => state.marketsReducer)
+	const {markets, pending} = useAppSelector(state => state.marketsReducer)
 
 	useEffect(() => {
 		dispatch(fetchMarkets())

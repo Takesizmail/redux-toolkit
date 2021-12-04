@@ -1,13 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import marketsReducer from './modules/markets/reducer';
+import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
-	marketsReducer
+	marketsReducer,
+	form: formReducer
 })
 
 export const setupStore = () => {
 	return configureStore({
-		reducer: rootReducer
+		reducer: rootReducer,
 	})
 }
 

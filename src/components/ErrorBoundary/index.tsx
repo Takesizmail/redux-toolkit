@@ -3,6 +3,7 @@ import Title from '../base/Title';
 
 interface IState {
 	error: boolean;
+	errorInfo: React.ErrorInfo | null
 }
 
 interface IProps {
@@ -11,17 +12,22 @@ interface IProps {
 
 class ErrorBoundary extends Component<IProps, IState> {
 	state = {
-		error: false
+		error: false,
+		errorInfo: null
 	}
 
 	componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-		this.setState({ error: true })
+		console.log('ErrorInfo', errorInfo)
+		this.setState({ error: true, errorInfo: errorInfo  })
 	}
 
 	render () {
-		if (this.state.error){
+		const {error, errorInfo} = this.state
+
+		if (error) {
 			return (
-				<Title color='red' > UPS.... </Title>
+				// @ts-ignore
+				<Title color='red' > UPS.... {errorInfo!.componentStack} </Title>
 			);
 		}
 

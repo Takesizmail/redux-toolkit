@@ -5,7 +5,8 @@ export interface IProps {
 	size?: number;
 	children?: React.ReactNode;
 	color?: string;
-	width?: string
+	width?: string;
+	margin?: string;
 }
 
 const Text: FC<IProps> = (props) => {

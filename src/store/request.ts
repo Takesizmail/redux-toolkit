@@ -5,7 +5,11 @@ const API = 'http://173.212.193.40:5486';
 
 const getBaseOptions = (method: string, customOptions = {}) => {
 	let options: any = {
-	method
+	method,
+		// headers: {
+		// 	accept: 'application/json',
+		// 	// 'content-type': 'application/json'
+		// }
 	};
 
 	return Object.assign(options, customOptions);
@@ -31,6 +35,8 @@ const base: Function = async (
 ) => {
 	let options: any = getBaseOptions(method, customOptions);
 
+
+
 	return fetch(getRequestUrl(API!, path), options)
 		.then(async (response) => {
 			if (response.ok) {
@@ -40,6 +46,7 @@ const base: Function = async (
 		})
 		.catch((err) => {
 			console.log(err);
+			throw new Error(err)
 		});
 };
 
