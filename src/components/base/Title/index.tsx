@@ -6,6 +6,11 @@ interface IProps {
 	color?: string
 }
 
+/**
+ * Common H1 title
+ * @param props {Object} - ...props
+ * @constructor
+ */
 const Title: FC<IProps> = (props) => {
 	return <StyledTitle {...props} />;
 };

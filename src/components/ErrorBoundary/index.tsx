@@ -10,6 +10,10 @@ interface IProps {
 	children: React.ReactNode;
 }
 
+/**
+ * Error catcher for all App
+ *
+ */
 class ErrorBoundary extends Component<IProps, IState> {
 	state = {
 		error: false,

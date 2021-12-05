@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
 import { Colors } from '../../../common/constants/colors';
+import { Link } from 'react-router-dom';
 
 export const  StyledReactPaginate = styled(ReactPaginate)`
 	display: flex;
@@ -43,6 +44,29 @@ export const Item = styled.li`
 	}
 `
 
+export const StyledLink = styled(Link)`
+	width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+	text-decoration: none;
+`
+
 export const StyledArrow = styled.img`
 	margin-left: auto;
+`
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+	margin-bottom: 20px;
+`
+
+export const StyledForm = styled.form`
+	padding: 10px;
+	border: 2px solid ${Colors.black};
+	margin-bottom: 40px; 
 `

@@ -4,12 +4,8 @@ type Method = "GET" | "DELETE" | "POST" | "PUT" | "PATCH";
 const API = 'http://173.212.193.40:5486';
 
 const getBaseOptions = (method: string, customOptions = {}) => {
-	let options: any = {
+	let options = {
 	method,
-		// headers: {
-		// 	accept: 'application/json',
-		// 	// 'content-type': 'application/json'
-		// }
 	};
 
 	return Object.assign(options, customOptions);
@@ -35,8 +31,6 @@ const base: Function = async (
 ) => {
 	let options: any = getBaseOptions(method, customOptions);
 
-
-
 	return fetch(getRequestUrl(API!, path), options)
 		.then(async (response) => {
 			if (response.ok) {
@@ -55,9 +49,8 @@ const request = {
 		const pathWithParams = getPathWithQueryString(path, params);
 		return base(pathWithParams, "GET", {});
 	},
-	delete: (path: string, params?: any) => {
-		const pathWithParams = getPathWithQueryString(path, params);
-		return base(pathWithParams, "DELETE", {});
+	delete: (path: string) => {
+		return base(path, "DELETE", {});
 	},
 	post: (path: string, params?: any) => {
 		const options = { body: JSON.stringify(params) };

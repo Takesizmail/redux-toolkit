@@ -34,3 +34,7 @@ export interface IMarketsData {
 	page: number;
 	pageCount: number;
 }
+
+export interface IMarketFilter {
+	s: string
+}

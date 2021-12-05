@@ -8,10 +8,16 @@ interface IProps {
 
 type PropsType = WrappedFieldProps & IProps
 
-const Input: FC<PropsType> = ({input, meta, ...props}) => {
-	console.log(meta);
+/**
+ * Base Input for Redux-Form
+ *
+ * @param input {Object} - Property from react-redux
+ * @param meta {Object} - Error, touch, ...etc
+ * @param props {Object} - Inner Props
+ * @constructor
+ */
+const Input: FC<PropsType> = ({ input, meta, ...props }) => {
 	return <StyledInput {...input} {...props} />
-	// return <input {...props} />
 };
 
 export default Input;

@@ -6,5 +6,6 @@ export const StyledText = styled('span')<Omit<IProps, 'children'>>`
 	color: ${(props) => props.color || 'black' };
 	width: ${(props) => props.width || 'auto' };
   margin: ${(props) => props.margin || 'auto' };
+	text-transform: ${(props) => props.textTransform || 'none' };;
 	display: inline-block;
 `

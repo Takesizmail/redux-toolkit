@@ -7,8 +7,15 @@ export interface IProps {
 	color?: string;
 	width?: string;
 	margin?: string;
+	textTransform?: string;
 }
 
+/**
+ * Common Text component
+ *
+ * @param props {Object} - ...props
+ * @constructor
+ */
 const Text: FC<IProps> = (props) => {
 	return <StyledText {...props} />
 };

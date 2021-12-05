@@ -11,6 +11,14 @@ interface IProps {
 	handlePaginationClick: (event: IPaginationHandlerEvent) => void;
 }
 
+/**
+ * Paginator Component
+ *
+ * @param page {number} - Number of current page
+ * @param pageCount {number} - Number of all pages
+ * @param handlePaginationClick {Function} - Function
+ * @constructor
+ */
 const Paginator: FC<IProps> = ({page, pageCount, handlePaginationClick  } ) => {
 
 	return (
