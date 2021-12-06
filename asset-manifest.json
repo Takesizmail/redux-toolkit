@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/Takesizmail/test-task/static/js/main.bc11e962.chunk.js",
-    "main.js.map": "/Takesizmail/test-task/static/js/main.bc11e962.chunk.js.map",
-    "runtime-main.js": "/Takesizmail/test-task/static/js/runtime-main.597f1d3e.js",
-    "runtime-main.js.map": "/Takesizmail/test-task/static/js/runtime-main.597f1d3e.js.map",
-    "static/js/2.ee260e1c.chunk.js": "/Takesizmail/test-task/static/js/2.ee260e1c.chunk.js",
-    "static/js/2.ee260e1c.chunk.js.map": "/Takesizmail/test-task/static/js/2.ee260e1c.chunk.js.map",
-    "index.html": "/Takesizmail/test-task/index.html",
-    "static/js/2.ee260e1c.chunk.js.LICENSE.txt": "/Takesizmail/test-task/static/js/2.ee260e1c.chunk.js.LICENSE.txt",
-    "static/media/loader.9e5a749a.svg": "/Takesizmail/test-task/static/media/loader.9e5a749a.svg"
+    "main.js": "/test-task/static/js/main.bc11e962.chunk.js",
+    "main.js.map": "/test-task/static/js/main.bc11e962.chunk.js.map",
+    "runtime-main.js": "/test-task/static/js/runtime-main.d9d4bff7.js",
+    "runtime-main.js.map": "/test-task/static/js/runtime-main.d9d4bff7.js.map",
+    "static/js/2.ae415c6d.chunk.js": "/test-task/static/js/2.ae415c6d.chunk.js",
+    "static/js/2.ae415c6d.chunk.js.map": "/test-task/static/js/2.ae415c6d.chunk.js.map",
+    "index.html": "/test-task/index.html",
+    "static/js/2.ae415c6d.chunk.js.LICENSE.txt": "/test-task/static/js/2.ae415c6d.chunk.js.LICENSE.txt",
+    "static/media/loader.9e5a749a.svg": "/test-task/static/media/loader.9e5a749a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.597f1d3e.js",
-    "static/js/2.ee260e1c.chunk.js",
+    "static/js/runtime-main.d9d4bff7.js",
+    "static/js/2.ae415c6d.chunk.js",
     "static/js/main.bc11e962.chunk.js"
   ]
 }
