@@ -13,7 +13,7 @@ const MarketsList = () => {
 	const { markets, pending, filter } = useAppSelector(state => state.marketsReducer)
 
 	useEffect(() => {
-		// dispatch(fetchMarkets(filter))
+		dispatch(fetchMarkets(filter))
 	}, [dispatch, filter])
 
 	const handlePaginationClick = (value: IPaginationHandlerEvent) => {
