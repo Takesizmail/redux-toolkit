@@ -43,8 +43,10 @@ let ReduxFilter = reduxForm<IFormValue, IOwnProps>({
 	form: 'marketsFilter',
 })(Filter)
 
-const mapStateToProps = (state: RootState, props: any) => ({
-
+const mapStateToProps = (state: RootState, props: IOwnProps) => ({
+	initialState: {
+		s: props.s
+	}
 })
 
 // @ts-ignore
