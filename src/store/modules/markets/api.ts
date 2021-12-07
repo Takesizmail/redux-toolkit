@@ -8,6 +8,7 @@ export const getMarketsRequest = (params: IFetchMarkets & Partial<IMarketFilter>
 			limit: 10,
 			offset: params ? params.offset : 0
 		}
+
 		return request.get('markets', query)
 }
 
@@ -20,7 +21,7 @@ export const fetchMarketDetailsRequest = (id: number) => {
 }
 
 export const updateMarketRequest = (id: number, params: Partial<IMarket>) => {
-	return request.put(`markets/${id}`, params)
+	return request.patch(`markets/${id}`, params)
 }
 
 export const removeMarketRequest = (id: number) => {
