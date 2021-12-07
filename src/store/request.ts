@@ -1,3 +1,4 @@
+import { RequestQueryBuilder } from '@nestjsx/crud-request'
 
 type Method = "GET" | "DELETE" | "POST" | "PUT" | "PATCH";
 
@@ -15,12 +16,18 @@ const getBaseOptions = (method: string, customOptions = {}) => {
 	return Object.assign(options, customOptions);
 }
 
-const  getPathWithQueryString = (path: string, params: any = {}): string => {
-	const esc = encodeURIComponent;
-	const query = Object.keys(params)
-		.filter((k) => params[k])
-		.map((k) => `${esc(k)}=${esc(params[k])}`)
-		.join("&");
+const getPathWithQueryString = (path: string, params: any = {}): string => {
+	/**
+	 * Find more scalable decision
+	 */
+	const search = params?.s 
+		? { search: { symbol: { $contL: params.s } } } 
+		: {}
+
+	const query = RequestQueryBuilder
+		.create({ ...params, ...search })
+		.query()
+
 	return query ? `${path}?${query}` : path;
 }
 
@@ -51,6 +58,7 @@ const base: Function = async (
 const request = {
 	get: (path: string, params?: any) => {
 		const pathWithParams = getPathWithQueryString(path, params);
+		console.log(pathWithParams)
 		return base(pathWithParams, "GET", {});
 	},
 	delete: (path: string) => {
