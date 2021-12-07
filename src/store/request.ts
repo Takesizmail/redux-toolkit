@@ -1,11 +1,15 @@
 
 type Method = "GET" | "DELETE" | "POST" | "PUT" | "PATCH";
 
-const API = 'http://173.212.193.40:5486';
+/**
+ * Move to .env file
+ */
+const API = 'http://localhost:3000/api';
 
 const getBaseOptions = (method: string, customOptions = {}) => {
 	let options = {
-	method,
+		method,
+		headers: { 'Content-Type': 'application/json' }
 	};
 
 	return Object.assign(options, customOptions);
@@ -31,7 +35,7 @@ const base: Function = async (
 ) => {
 	let options: any = getBaseOptions(method, customOptions);
 
-	return fetch(getRequestUrl(API!, path), options)
+	return fetch(getRequestUrl(API, path), options)
 		.then(async (response) => {
 			if (response.ok) {
 				return response?.json();
